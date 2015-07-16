@@ -46,41 +46,41 @@ int main(int argc, char**argv) {
 
   switch(srv.response.index){
   	case 0:
-  		location = "l3_508";
+  		location = "d3_508";
   		break;
   	case 1:
-  		location = "l3_512";
+  		location = "d3_512";
   		break;
   	case 2:
-  		location = "l3_510";
+  		location = "d3_510";
   		break;
   	case 3:
-  		location = "l3_402";
+  		location = "d3_402";
   		break;
   	case 4:
-  	    location = "l3_418";
+  	    location = "d3_418";
   		break;
   	case 5:
-  		location = "l3_420";
+  		location = "d3_420";
   		break;
   	case 6:
-  		location = "l3_432";
+  		location = "d3_432";
   		break;
   	case 7:
-  		location = "l3_502";
+  		location = "d3_502";
   		break;
   	case 8:
-  		location = "l3_414b";
+  		location = "d3_414b";
   		break;
   	case 9:
-  		location = "l3_436";
+  		location = "d3_436";
   		break;
   }
 
 
   if (srv.response.index == 10) {
     srv.request.type = 2;
-    srv.request.message = "What is the location? [ex. l3_414b or l3_418]"; 
+    srv.request.message = "What is the location? [ex. d3_414b or d3_418]"; 
     gui_client.call(srv);
     location = srv.response.text;
   }
