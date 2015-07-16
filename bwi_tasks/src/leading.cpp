@@ -34,9 +34,9 @@ int main(int argc, char**argv) {
   options.push_back("Stacy (3.502)");
   options.push_back("BWI Lab");
   options.push_back("Robot Soccer Lab");
-  options.push_bakc("Not on the list?");
+  options.push_back("Not on the list?");
 
-  // Ask if the object needs to be retrieved from another location or not 
+
   srv.request.type = 1; 
   srv.request.message = "Where do you need to go?"; 
   srv.request.options = options;
@@ -77,12 +77,12 @@ int main(int argc, char**argv) {
   		break;
   }
 
-  // Ask for object location when it needs to be retrieved
+
   if (srv.response.index == 10) {
     srv.request.type = 2;
     srv.request.message = "What is the location? [ex. l3_414b or l3_418]"; 
     gui_client.call(srv);
-    object_location = srv.response.text;
+    location = srv.response.text;
   }
 
   
