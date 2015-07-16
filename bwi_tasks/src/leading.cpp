@@ -94,7 +94,7 @@ int main(int argc, char**argv) {
   
   bwi_kr_execution::AspRule rule;
   bwi_kr_execution::AspFluent gfluent;
-  gfluent.name = "not at";
+  gfluent.name = "not facing";
   
   gfluent.variables.push_back(location);
  
