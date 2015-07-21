@@ -24,66 +24,22 @@ int main(int argc, char**argv) {
   bwi_msgs::QuestionDialog srv;
 
   vector<std::string> options;
-  options.push_back("Peter (3.508)");
-  options.push_back("Ray (3.512)");
-  options.push_back("Dana (3.510)");
-  options.push_back("Kazunori (3.402)");
-  options.push_back("Matteo (3.418)");
-  options.push_back("Shiqi (3.420)");
-  options.push_back("Jivko (3.432)");
-  options.push_back("Stacy (3.502)");
-  options.push_back("BWI Lab");
-  options.push_back("Robot Soccer Lab");
-  options.push_back("Not on the list?");
 
-
-  srv.request.type = 1; 
-  srv.request.message = "Where do you need to go?"; 
-  srv.request.options = options;
-  srv.request.timeout = bwi_msgs::QuestionDialogRequest::NO_TIMEOUT; 
-  gui_client.waitForExistence();
-  gui_client.call(srv);
-
-  switch(srv.response.index){
-  	case 0:
-  		location = "d3_508";
-  		break;
-  	case 1:
-  		location = "d3_512";
-  		break;
-  	case 2:
-  		location = "d3_510";
-  		break;
-  	case 3:
-  		location = "d3_402";
-  		break;
-  	case 4:
-  	    location = "d3_418";
-  		break;
-  	case 5:
-  		location = "d3_420";
-  		break;
-  	case 6:
-  		location = "d3_432";
-  		break;
-  	case 7:
-  		location = "d3_502";
-  		break;
-  	case 8:
-  		location = "d3_414b";
-  		break;
-  	case 9:
-  		location = "d3_436";
-  		break;
-  }
-
-
-  if (srv.response.index == 10) {
-    srv.request.type = 2;
-    srv.request.message = "What is the location? [ex. d3_414b or d3_418]"; 
+  srv.request.type = 2;
+  srv.request.message = "What is the location? [ex. d3_414b or d3_418]\n"
+    					"Peter (d3_508)\n"
+    					"Ray (d3_512)\n"
+    					"Dana (d3_510)\n"
+    					"Kazunori (d3_402)\n"
+    					"Matteo (d3_418)\n"
+    					"Shiqi (d3_420)\n"
+    					"Jivko (d3_432)\n"
+    					"Stacy (d3_502)\n"
+    					"BWI Lab (d3_414b)\n"
+    					"Robot Soccer Lab\n"; 
     gui_client.call(srv);
     location = srv.response.text;
-  }
+
 
   
   // Create rule and goal
