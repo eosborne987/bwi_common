@@ -27,17 +27,13 @@ int main(int argc, char**argv) {
 
   srv.request.type = 2;
   srv.request.message = "What is the location? [ex. d3_414b or d3_418]\n"
-    					"Peter (d3_508)\n"
-    					"Ray (d3_512)\n"
-    					"Dana (d3_510)\n"
-    					"Kazunori (d3_402)\n"
-    					"Matteo (d3_418)\n"
-    					"Shiqi (d3_420)\n"
-    					"Jivko (d3_432)\n"
-    					"Stacy (d3_502)\n"
-    					"BWI Lab (d3_414b)\n"
-    					"Robot Soccer Lab\n"; 
+    					"Peter (d3_508)     Ray (d3_512)\n"
+    					"Dana (d3_510)      Kazunori (d3_402)\n"
+    					"Matteo (d3_418)	Shiqi (d3_420)\n"
+    					"Jivko (d3_432)	    Stacy (d3_502)\n"
+    					"BWI Lab (d3_414b)	Robot Soccer Lab\n"; 
     gui_client.call(srv);
+    gui_client.waitForExistence();
     location = srv.response.text;
 
 
